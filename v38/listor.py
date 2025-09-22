@@ -33,3 +33,11 @@ print(variabel) # 5
 lista = [1, 3.14, True, "Holger"] # heltal, decimaltal, boolean, textsträng
 for element in lista: # loopa igenom lista
     print(element)
+
+# en riktigt stor lista
+lista = list(range(1000))
+print(lista)
+# dubbla alla element i listan
+for i in range(len(lista)): # funktionen len returnerar listans längd
+    lista[i] = lista[i] * 2
+print(lista)
