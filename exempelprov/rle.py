@@ -8,7 +8,10 @@ def rle(text):
         while i < len(text) and text[i] == letter:
             i = i+1
             number_of_letters = number_of_letters + 1
-        output = output + str(number_of_letters) + letter
+        if number_of_letters == 1: # om bara en förekomst av bokstaven så skriver vi inte ut "1"
+            output = output + letter
+        else:
+            output = output + str(number_of_letters) + letter
     return output
 
 print(rle("WWWWAARRRRRRGHH"))
