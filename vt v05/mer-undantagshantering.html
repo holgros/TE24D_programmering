@@ -10,10 +10,10 @@
     <p>Prova att först skriva in en mening med minst tre ord (använd mellanslag) och sedan någon input med färre än tre ord!</p>
     <script>
         let text = prompt("Skriv lite text!");
+        let text_array = text.split(" ");  // Vad händer ifall användaren skriver in en text med färre än två mellanslag?
+        let word_nbr_three = text_array[2]; // Vad händer ifall det inte finns tre ord i texten?
+        console.log(`Det tredje ordet i din input är ${word_nbr_three}`);   // Undefined?
         try {
-            let text_array = text.split(" ");  // Vad händer ifall användaren skriver in en text med färre än två mellanslag?
-            let word_nbr_three = text_array[2]; // Vad händer ifall det inte finns tre ord i texten?
-            console.log(`Det tredje ordet i din input är ${word_nbr_three}`);   // Undefined?
             console.log(`Detta ord börjar på bokstaven ${word_nbr_three.charAt(0)}`);   // Här kan det bli fel! Ett Undefined-objekt har inte metoden charAt
         }
         catch (error) {
