@@ -26,27 +26,27 @@ try {   // här skriver vi "farlig" kod
     console.log("Hit kommer programmet aldrig att nå, eftersom det blir fel i raden ovanför.");
 }
 catch (error) { // denna kod körs ifall något går fel
-    console.log(`Något gick fel: ${error.message}`)
+    console.log(`Något gick fel: ${error.message}`);
 }
 finally {   // den här koden körs oavsett om det blir fel eller ej
-    console.log("Programmet fortsätter...")
-    console.log("Slut på exempel 1")
+    console.log("Programmet fortsätter...");
+    console.log("Slut på exempel 1");
 }
 
 // Exempel 2: generera ("kasta") ett eget fel, ifall vi har ett variabelvärde som vi inte vill tillåta
 try {
     let x = 0;
     if (x == 0) {
-        throw new Error("x får inte vara lika med noll!")
+        throw new Error("x får inte vara lika med noll!");
     }
     let y = 1/x;    // ...eftersom vi vill genomföra division med x
     console.log(y);
-    console.log("Hit kommer programmet aldrig att nå, eftersom vi får ett fel redan på rad 34.")
+    console.log("Hit kommer programmet aldrig att nå, eftersom vi får ett fel redan på rad 34.");
 }
 catch (error) {
     console.log(`Något gick fel: ${error.message}`);
 }
 finally {
     console.log("Programmet fortsätter...");
-    console.log("Slut på exempel 2")
+    console.log("Slut på exempel 2");
 }
