@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undantagshantering</title>
+</head>
+<body>
+    <p>Öppna webbläsarens konsol (F12 eller ctrl-shift-i) för att se output!</p>
+    <p>Prova att först skriva in en mening med minst tre ord (använd mellanslag) och sedan någon input med färre än tre ord!</p>
+    <script>
+        let text = prompt("Skriv lite text!");
+        try {
+            let text_array = text.split(" ");  // Vad händer ifall användaren skriver in en text med färre än två mellanslag?
+            let word_nbr_three = text_array[2]; // Vad händer ifall det inte finns tre ord i texten?
+            console.log(`Det tredje ordet i din input är ${word_nbr_three}`);   // Undefined?
+            console.log(`Detta ord börjar på bokstaven ${word_nbr_three.charAt(0)}`);   // Här kan det bli fel! Ett Undefined-objekt har inte metoden charAt
+        }
+        catch (error) {
+            console.log(`Något gick fel: ${error.message}`);
+            console.log("Input måste vara minst tre ord!"); // Hjälp användaren att göra rätt nästa gång
+        }
+        finally {
+            console.log("Programmet avslutas, uppdatera sidan för att köra igen!");
+        }
+    </script>
+</body>
+</html>
