@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kortleken</title>
+    <style>
+      body {
+        color: white;
+        text-align: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-image: url("images/free-casino-table-cloth-texture-1637741.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      button {
+        padding: 10px;
+        background-color: green;
+        color: yellow;
+        border: none;
+        border-radius: 5px;
+      }
+      .card {
+        width: 15vw;
+        padding: 1vw;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>♠️ ♦️ Kortleken ♣️ ♥️</h1>
+    <button onclick="shuffle()">Blanda</button>
+    <button onclick="drawFiveCards()">Dra fem kort</button>
+    <button onclick="valueHand()">Värdera hand</button>
+    <h3>Här är din hand</h3>
+    <div id="handen"></div>
+    <h3>Resultat</h3>
+    <div id="resultat"></div>
+  </body>
+  <script src="app.js"></script>
+</html>
