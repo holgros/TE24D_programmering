@@ -1,0 +1,39 @@
+body {
+  padding: 0 10vw;
+  background: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: white;
+}
+
+#super-container {
+  margin: 10px 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+}
+
+#canvas-container {
+  border: 1px solid black;
+}
+
+a {
+  color: white;
+}
+
+.key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 20px;
+  aspect-ratio: 1/1;
+  padding: 5px;
+  margin: 4px;
+
+  border: darkgray solid 1px;
+  border-radius: 4px;
+  color: darkgray;
+}

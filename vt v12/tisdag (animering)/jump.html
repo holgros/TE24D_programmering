@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Canvas FTW</title>
+    <style>
+      #canvas-container {
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img id="tile" src="images/tile.png" style="display: none" />
+    <div id="super-container">
+      <div id="header-container">
+        <h2 id="header-text">Canvas-animering hopp</h2>
+      </div>
+      <p>Hoppa med <span class="key">space</span></p>
+      <div id="canvas-container">
+        <canvas id="canvas" height="600" width="800"></canvas>
+      </div>
+    </div>
+    <!-- simple.js innehåller en mycket enkel animation -->
+    <script src="js/jump.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Canvas FTW</title>
+  </head>
+
+  <body>
+    <div id="super-container">
+      <div id="header-container">
+        <h2 id="header-text">Canvas-animering gravitation</h2>
+      </div>
+      <form>
+        <label for="gravity">Gravitation:</label>
+        <input
+          type="range"
+          name="gravity"
+          id="rngGravity"
+          min="1"
+          max="10"
+          value="2" />
+        <button type="button" id="btnRestart">Starta om</button>
+      </form>
+      <div id="canvas-container">
+        <canvas id="canvas" height="800" width="800"></canvas>
+      </div>
+    </div>
+    <!-- simple.js innehåller en mycket enkel animation -->
+    <script src="js/gravity.js"></script>
+  </body>
+</html>
