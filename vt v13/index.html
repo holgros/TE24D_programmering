@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprite-animation med canvas</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+  </style>
+  <body>
+    <canvas id="theCanvas" width="200" height="200"></canvas>
+  </body>
+  <script>
+    const canvas = document.getElementById("theCanvas")
+    const ctx = canvas.getContext("2d")
+
+    // Laddar sprite sheet
+    const spriteSheet = new Image()
+    spriteSheet.src = "sprites/1 Pink_Monster/Pink_Monster_Jump_8.png"
+
+    // Variabler för spritens storlek
+    const spriteWidth = 32
+    const spriteHeight = 32
+
+    // frameIndex håller reda på vilken frame som ska ritas.
+    let frameIndex = 0
+    //totalFrames är hur många frames animationen är, det kan variera mellan olika animationer
+    const totalFrames = 8
+
+    const scale = 4
+
+    // De här används för att "throttla" animationen så att den inte går för fort.
+    let lastTimestamp = 0,
+      maxFPS = 15,
+      timestep = 1000 / maxFPS // ms for each frame
+
+    /**
+     * timestamp är en inparameter som skickas in i funktionen av requestAnimationFrame()
+     */
+    function draw(timestamp) {
+      //if-sats för "throttling". För att det inte ska bli för hög FPS
+      if (timestamp - lastTimestamp < timestep) {
+        // Vi ska vänta med att rita så vi avbryter funktionen.
+        requestAnimationFrame(draw)
+        return
+      }
+      // OK, dags att rita!
+      lastTimestamp = timestamp
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height) // Tömmer canvasen
+
+      // Ritar den frame som är på frameIndex med skalan i scale
+      ctx.drawImage(
+        spriteSheet,
+        frameIndex * spriteWidth, // Beräknar framens x-koordinat
+        0, // Framens y-koordinat är alltid 0
+        spriteWidth,
+        spriteHeight,
+        0, // Ritar på x-koordinat 0 på canvas
+        0, // Ritar på y-koordinat 0 på canvas
+        spriteWidth * scale,
+        spriteHeight * scale
+      )
+
+      // Se till att frameIndex inte blir högre än antalet frames. Börja om på frame 0 i så fall.
+      frameIndex = (frameIndex + 1) % totalFrames
+      requestAnimationFrame(draw)
+    }
+
+    // Startar animationen när bilden laddats.
+    spriteSheet.onload = requestAnimationFrame(draw)
+  </script>
+</html>
